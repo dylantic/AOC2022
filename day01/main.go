@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 	Common "github.com/dylantic/AOC2022/common"
-	"io/ioutil"
 	"log"
+	"os"
 	"sort"
 	"strings"
 )
 
 func main() {
-	input, err := ioutil.ReadFile("./input.txt")
+	input, err := os.ReadFile("./input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
