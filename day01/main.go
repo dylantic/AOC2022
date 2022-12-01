@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"log"
 	"sort"
-	"strconv"
 	"strings"
 )
 
@@ -45,17 +44,4 @@ func main() {
 
 	fmt.Printf("The elf carrying the most calories has %d in total\n", mostCalories)
 	fmt.Printf("The top 3 elves are carrying %d in total\n", Common.Sum(calArray[0:3]))
-}
-
-func stringToInt(stringVar string) int {
-	i, _ := strconv.Atoi(stringVar)
-	return i
-}
-
-func sum(integers []int) int {
-	result := 0
-	for _, i := range integers {
-		result += i
-	}
-	return result
 }
