@@ -5,7 +5,6 @@ import (
 	Common "github.com/dylantic/AOC2022/common"
 	"log"
 	"os"
-	"sort"
 	"strings"
 )
 
@@ -39,8 +38,7 @@ func main() {
 		calArray = append(calArray, calTotal)
 	}
 
-	// Weird-ass Go shenanigans to sort an array of integers in descending order.
-	sort.Sort(sort.Reverse(sort.IntSlice(calArray)))
+	Common.SortIntArray(calArray, true)
 
 	fmt.Printf("The elf carrying the most calories has %d in total\n", mostCalories)
 	fmt.Printf("The top 3 elves are carrying %d in total\n", Common.Sum(calArray[0:3]))
