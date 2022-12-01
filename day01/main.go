@@ -34,7 +34,7 @@ func main() {
 		calSlice = append(calSlice, elfMap[elf])
 	}
 
-	Common.SortIntArray(calSlice, true)
+	Common.SortIntSlice(calSlice, true)
 
 	fmt.Printf("The elf carrying the most calories has %d in total\n", mostCalories)
 	fmt.Printf("The top 3 elves are carrying %d in total\n", Common.Sum(calSlice[0:3]))

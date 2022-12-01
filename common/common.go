@@ -20,12 +20,12 @@ func Sum(integers []int) int {
 	return result
 }
 
-// SortIntArray implements Go's standard sort library and makes reversing the array a little quicker to implement.
+// SortIntSlice implements Go's standard sort library and makes reversing the slice a little quicker to implement.
 // desc is a bool deciding whether the sort should be descending (true) or ascending (false)
-func SortIntArray(intArray []int, desc bool) {
+func SortIntSlice(intSlice []int, desc bool) {
 	if desc {
-		sort.SliceStable(intArray, func(i, j int) bool { return intArray[i] > intArray[j] })
+		sort.SliceStable(intSlice, func(i, j int) bool { return intSlice[i] > intSlice[j] })
 	} else {
-		sort.SliceStable(intArray, func(i, j int) bool { return intArray[i] < intArray[j] })
+		sort.SliceStable(intSlice, func(i, j int) bool { return intSlice[i] < intSlice[j] })
 	}
 }
