@@ -21,7 +21,6 @@ func main() {
 	elf := 1
 
 	for _, cal := range splitElves {
-		//println(cal)
 		if len(cal) == 0 {
 			elf = elf + 1
 		} else {
@@ -40,6 +39,7 @@ func main() {
 		calArray = append(calArray, calTotal)
 	}
 
+	// Weird-ass Go shenanigans to sort an array of integers in descending order.
 	sort.Sort(sort.Reverse(sort.IntSlice(calArray)))
 
 	fmt.Printf("The elf carrying the most calories has %d in total\n", mostCalories)
