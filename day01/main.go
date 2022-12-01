@@ -14,10 +14,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	var data = string(input)
-	var splitElves = strings.Split(data, "\r\n")
+	data := string(input)
+	splitElves := strings.Split(data, "\r\n")
 	elfMap := make(map[int]int)
 	elf := 1
+
+	mostCalories := 0
+	calSlice := make([]int, 0)
 
 	for _, cal := range splitElves {
 		if len(cal) == 0 {
@@ -25,21 +28,14 @@ func main() {
 		} else {
 			elfMap[elf] += Common.StringToInt(cal)
 		}
-	}
-
-	var mostCalories = 0
-	var calArray []int
-
-	for _, calTotal := range elfMap {
-		if calTotal > mostCalories {
-			mostCalories = calTotal
-
+		if elfMap[elf] > mostCalories {
+			mostCalories = elfMap[elf]
 		}
-		calArray = append(calArray, calTotal)
+		calSlice = append(calSlice, elfMap[elf])
 	}
 
-	Common.SortIntArray(calArray, true)
+	Common.SortIntArray(calSlice, true)
 
 	fmt.Printf("The elf carrying the most calories has %d in total\n", mostCalories)
-	fmt.Printf("The top 3 elves are carrying %d in total\n", Common.Sum(calArray[0:3]))
+	fmt.Printf("The top 3 elves are carrying %d in total\n", Common.Sum(calSlice[0:3]))
 }
